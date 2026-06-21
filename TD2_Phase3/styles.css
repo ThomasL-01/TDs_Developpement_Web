@@ -57,7 +57,7 @@ body {
     margin-bottom: 10px;
 }
 
-.statut_en-stock {
+.status_en-stock {
     padding: 2%;
     color: green;
     font-weight: bold;
@@ -65,10 +65,37 @@ body {
     border-radius: 5px;
 }
 
-.statut_rupture {
+.status_rupture {
     padding: 2%;  
     color: red;
     font-weight: bold;
     background-color: lightcoral;
     border-radius: 5px;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form input[type="submit"] {
+    background-color: midnightblue;
+    color: white;
+    border: none;
+    cursor: pointer;
 }

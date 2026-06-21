@@ -4,41 +4,35 @@
         <meta charset="UTF-8">
         <title>Gestionnaire de Stock</title>
         <link href="styles.css" rel="stylesheet">
-        <link href="script.js" rel="script">
+        <script src = "script.js" ></script>
     </head>
     <body>
         <div class = "header">
             <h1>Gestionnaire de Stock</h1>
             <nav>
-                <input type = "search" placeholder = "Rechercher un produit..." name = "Rechercher">
+                <input type = "search" placeholder = "Rechercher un produit..." name = "Rechercher" oninput = "searchProducts()">
             </nav>
         </div>
-        <section class="catalogue">
-            
-            <article name = "Clavier mécanique" class = "produit">
-                <h3>Clavier mécanique</h3>
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61jacONrzjL._AC_.jpg&f=1&nofb=1&ipt=1239aa6d20cb09df6f5b722ce68d819f50a89f0fbd4c0e8ac07f2278cafdaa4e" alt="Image du Clavier mécanique" height="100" width="200">
-                <p name = "desc">Clavier RGB avec switchs rapides pour gaming et bureautique</p>
-                <p name = "Prix">Prix : 79€</p>
-                <p name = "Statut" class = "statut_en-stock">Statut : En Stock</p>
-            </article>
-
-            <article name = "Souris ergonomique" class = "produit">
-                <h3>Souris ergonomique</h3>
-                <img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61RD8Thd4dL._AC_SL1500_.jpg&f=1&nofb=1&ipt=73527ccbac108d10bf0dd8926d1a91b8d9dbfc3199ae3231947ac3d982725bfc" alt="Image de la Souris ergonomique" height="100" width="150">
-                <p name = "desc">Souris sans fil avec précision haute performance</p>
-                <p name = "Prix">Prix : 39€</p>
-                <p name = "Statut" class = "statut_rupture">Statut : Rupture de Stock</p>
-            </article>
-
-            <article name = "Écran 24 pouces" class="produit">
-                <h3>Écran 24 pouces</h3>
-                <img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71YdxZ6LwcL._AC_.jpg&f=1&nofb=1&ipt=3f571df03acf35c76fb6eb7d87a11d64418965086d4b7bf3a68793a1a5469398" alt="Image de l'Écran 24 pouces" height="100" width="125">
-                <p name = "desc">Écran full HD idéal pour le travail et le multimédia</p>
-                <p name = "Prix">Prix : 149€</p>
-                <p name = "Statut" class = "statut_en-stock">Statut : En Stock</p>
-            </article>
+        <section class="catalogue" id="catalogue">
+            <!-- Le catalogue des produits sera affiché ici -->
         </section>
-        
+
+        <form onsubmit="return false">
+            <label for="nom">Nom du produit :</label>
+            <input type="text" id="name" name="nom" required><br><br>
+            <label for="description">Description :</label>
+            <input type="text" id="desc" name="description" required><br><br>
+            <label for="Prix">Prix :</label>
+            <input type="number" id="price" name="Prix" required><br><br>
+            <label for="Statut">Statut :</label>
+            <select id="status" name="Statut" required>
+                <option value="En Stock">En Stock</option>
+                <option value="Rupture de Stock">Rupture de Stock</option>
+            </select><br><br>
+            <label for="image">URL de l'image :</label>
+            <input type="url" id="image" name="image" required><br><br>
+            <input type="submit" value="Ajouter le produit" onclick="addProduct()">
+        </form>
+    
     </body>
 </html>
