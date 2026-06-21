@@ -17,6 +17,8 @@ function searchProducts() {
     if (filteredProducts.length === 0) {
         const noResultsMessage = document.createElement("p");
         noResultsMessage.textContent = "Aucun produit trouvé.";
+        noResultsMessage.style.fontWeight = "bold";
+        noResultsMessage.style.padding = "30px";
         section.appendChild(noResultsMessage);
     } else {
         filteredProducts.forEach(product => createProductCard(product));
