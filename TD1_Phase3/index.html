@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Serveur de sécurité - Monitoring</title>
+        <link rel = "stylesheet" href = "styles.css">
+        <script src = "script.js" ></script>
+    </head>
+    <body>
+        <div class = "titre">
+            
+            <img src = "logo.png" alt = "Logo de sécurité" height="200" width="200">
+            <h1>Serveur de sécurité - Monitoring</h1>
+        </div>
+        <h1>Alertes de sécurité </h1>
+        <table id = "tableau">
+            <thead> 
+                <tr><th>ID</th><th>Date</th><th>Adresse IP Source</th><th>Type d'alerte</th><th>Niveau de sévérité</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>001</td><td>Thu May 07 2026 11:48:20 GMT+0200 (heure d’été d’Europe centrale)</td><td>192.168.1.10</td><td>Intrusion</td><td>Élevée</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Ajouter une règle</h2>
+            <form onsubmit = "return false"> 
+                <div class = "item-form">
+                    <label>Port :</label>
+                    <input type = "text" id = "port">
+                    <br>
+                </div>
+                <div class = "item-form">
+                    <label>IP source :</label>
+                    <input type = "text" id = "ip">
+                    <br>
+                </div>
+                <div class = "item-form">
+                    <label>Type:</label>
+                    <select id = "type">
+                        <option>Intrusion</option>
+                        <option>Scan de Port</option>
+                    </select>
+                    <br>
+                </div>
+                <div class = "item-form">
+                    <label>Sévérité :</label>
+                    <select id = "severite">
+                        <option>Faible</option>
+                        <option>Moyenne</option>
+                        <option>Élevée</option>
+                    </select>
+                    <br>
+                </div>
+                <br>
+                <div class = "item-form">
+                    <label>Action :</label>
+                    <br>
+                    <div>
+                        <label for="Autoriser">Autoriser</label>
+                        <input type = "radio" value = "Autoriser" id = "Autoriser" name = "action">
+                        <label for="Bloquer">Bloquer</label>
+                        <input type = "radio" value = "Bloquer" id = "Bloquer" name = "action">
+                    </div>
+                    <br>
+                </div>
+                
+                <button class = "add" type="submit" id = "valider" onclick="ajouterLigne()">Ajouter</button>
+            </form>
+        
+        <h2>Veille sécurité</h2>
+        <article>
+            <h3> Nouvelle faille détectée</h3>
+            <p>Une vulnérabilité critique a été identifiée sur certains serveurs web.</p>
+            <a href="">Lire le rapport</a>
+        </article>
+        <br>
+        <article>
+            <h3>Mise à jour de sécurité</h3>
+            <p>Un correctif important est disponible pour les systèmes Linux.</p>
+            <a href="">Voir les détails</a>
+        </article>
+    </body>
+</html>
